@@ -1,4 +1,5 @@
 celery[sqs]==4.3.0
+kombu==4.6.4
 redis==3.3.8
 boto3==1.9.240
 green==3.0.0
