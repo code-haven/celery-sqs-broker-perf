@@ -12,6 +12,7 @@ available `version`:
 - celery4.2.0_kombu4.2.1
 - celery4.2.0_kombu4.3.0
 - celery4.3.0
+- celery4.4.0
  
 
 ### Results
@@ -20,6 +21,7 @@ available `version`:
     - celery4.2.0_kombu4.2.1 `~3s`
     - celery4.2.0_kombu4.3.0 `~10s`
     - celery4.3.0 `~10s`
+    - celery4.4.0 (rc3) `~10s`
    
  ### Observations
- - In celery 4.3.0, messages(10?) seems to be read every 1 second regardless of the number of tasks in queue.
+ - when kombu 4.3.0+, messages(10?) seems to be read every 1 second regardless of the number of tasks in queue.
