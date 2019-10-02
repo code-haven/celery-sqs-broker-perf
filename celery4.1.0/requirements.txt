@@ -1,0 +1,6 @@
+celery==4.1.0
+kombu==4.1.0
+redis==3.3.8
+boto3==1.9.240
+green==3.0.0
+pycurl==7.43.0

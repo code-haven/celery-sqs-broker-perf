@@ -1,0 +1,29 @@
+version: '2'
+services:
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - sqs-docker
+      - redis
+    environment:
+      PYTHONUNBUFFERED: 1
+    command: celery -A tasks worker -l INFO
+  sqs-docker:
+    image: vsouza/sqs-local
+    environment:
+      - ELASTICMQ_OPTS=-Dconfig.file=custom.conf -Dnode-address.host=sqs-docker
+  redis:
+    image: redis
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh run_tests.sh
+    depends_on:
+      - worker
+      - sqs-docker
+      - redis
+    environment:
+      PYTHONUNBUFFERED: 1

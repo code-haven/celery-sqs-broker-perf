@@ -1,0 +1,4 @@
+celery[sqs]==4.3.0
+redis==3.3.8
+boto3==1.9.240
+green==3.0.0
